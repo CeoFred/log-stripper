@@ -1,6 +1,6 @@
 {
   "name": "log-stripper",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Removes all console.log instance in a directory",
   "main": "bin/index.js",
   "bin": {
