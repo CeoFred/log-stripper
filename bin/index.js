@@ -3,7 +3,6 @@
 const chalk = require("chalk");
 const boxen = require("boxen");
 const yargs = require("yargs");
-const axios = require("axios");
 
 const stripper = require("./stripper");
 

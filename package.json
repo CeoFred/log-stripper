@@ -4,7 +4,7 @@
   "description": "Removes all console.log instance",
   "main": "bin/index.js",
   "bin": {
-    "console-stripper": "./bin/index.js"
+    "log-stripper": "./bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\""
@@ -19,7 +19,6 @@
   "author": "Alfred Johnson",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.1",
     "boxen": "^4.0.0",
     "chalk": "^2.4.2",
     "yargs": "^13.2.4"
