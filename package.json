@@ -21,6 +21,7 @@
   "license": "MIT",
   "dependencies": {
     "boxen": "^4.0.0",
+    "winston": "^3.3.3",
     "yargs": "^13.2.4"
   }
 }

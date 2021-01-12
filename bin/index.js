@@ -4,6 +4,7 @@ const boxen = require("boxen");
 const yargs = require("yargs");
 
 const stripper = require("./stripper");
+const logger = require("./logger");
 
 const options = yargs
  .usage("Usage: -d <directory>")
@@ -22,9 +23,11 @@ const boxenOptions = {
 };
 const msgBox = boxen( greeting, boxenOptions );
 
-console.log(msgBox);
+logger.info(msgBox);
+// console.log(msgBox);
 
  stripper.strip(options.d,function(){
-   console.log("Done Clearing log instances");
+   logger.info("Done Clearing log instances");
+  //  console.log("Done Clearing log instances");
  })
 
