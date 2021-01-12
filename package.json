@@ -1,6 +1,6 @@
 {
   "name": "log-stripper",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Removes all console.log instance in a directory",
   "main": "bin/index.js",
   "bin": {
@@ -14,7 +14,8 @@
     "url": "github.com/CeoFred/log-stripper"
   },
   "keywords": [
-    "logs","cli"
+    "logs",
+    "cli"
   ],
   "author": "Alfred Johnson",
   "license": "MIT",
