@@ -3,7 +3,8 @@ var fs = require('fs');
         var totalFiles = 0;
         const directorListing = [];
 
-var walk = function (dir, done) {
+var walk = function (dir, opt ,done) {
+    const commentInstead = opt.commentInstead
     fs.readdir(dir, function (error, list) {
         if (error) {
             return done(error);
@@ -23,14 +24,14 @@ var walk = function (dir, done) {
             fs.stat(file, function (error, stat) {
         
                 if (stat && stat.isDirectory()) {
-                    walk(file, function (error) {
+                    walk(file, commentInstead, function (error) {
                         next();
                     });
                 } else {
                     // do stuff to file here
                     if(file.includes('.js') || file.includes('.ts') || file.includes('.jsx') || file.includes('.tsx') || file.includes('.vue') ) {
                     totalFiles++;
-                    readAndStripFile(file)
+                    readAndStripFile(file,commentInstead)
                     }
                     next();
                 }
@@ -39,26 +40,33 @@ var walk = function (dir, done) {
     });
 };
 
-function getData(srcPath) { 
+function getData(srcPath,commentInstead) { 
 fs.readFile(srcPath, 'utf8', function (err, data) {
         if (err) throw err;
-            // console.log(`reading ${srcPath}`);
         
         const fileContents = String(data);
-        const regex = /console\.log\(([^)]+)\);?/igm
-        const formatted = fileContents.replace(regex,"");
+        const regex = /console\.log\(([^)]+)\);?/igm;
+        let formatted = '';
         
-          fs.writeFile (srcPath, formatted, function(err) {
-        if (err) throw err;
-            console.log(`stripped ${srcPath}`);
-        }
-    );
+             console.log("Using comments instead of white space")
+
+             formatted = fileContents.replace(regex,function(match) {
+                    return commentInstead ? `//${match}` : "";
+             });
+             console.log(commentInstead);
+        
+        
+            fs.writeFile (srcPath, formatted,function(err){
+                if(err) console.log('Failed to write')
+            });
+          
+          
         }
     );
 }
 
-async function readAndStripFile(path) {
-     await getData(path);  
+async function readAndStripFile(path,commentInstead) {
+     await getData(path,commentInstead);  
 }
 
 module.exports = { strip: walk }
