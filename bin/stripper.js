@@ -47,7 +47,7 @@ fs.readFile(srcPath, 'utf8', function (err, data) {
         
         const fileContents = String(data);
         const regex = /console\.log\(([^)]+)\);?/igm
-        const formatted = fileContents.replace(regex," ");
+        const formatted = fileContents.replace(regex,"");
         
           fs.writeFile (srcPath, formatted, function(err) {
         if (err) throw err;
