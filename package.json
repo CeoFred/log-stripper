@@ -1,6 +1,6 @@
 {
   "name": "log-stripper",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Removes all console.log instance",
   "main": "bin/index.js",
   "bin": {
