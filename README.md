@@ -5,8 +5,8 @@ javascript/typescript files before pushing to production server.
 ## Usage & Installations
 
 ```
-npm i --globel log-stripper
+npm i --global log-stripper
 
-console-stripper -d yourdirectory
+log-stripper -d yourdirectory
 
 ```
