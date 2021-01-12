@@ -1,5 +1,5 @@
 {
-  "name": "console-stripper",
+  "name": "log-stripper",
   "version": "3.0.0",
   "description": "Removes all console.log instance",
   "main": "bin/index.js",
