@@ -1,6 +1,5 @@
 var fs = require('fs');
 
-var walkPath = './main';
         var totalFiles = 0;
         const directorListing = [];
 
@@ -63,11 +62,3 @@ async function readAndStripFile(path) {
 }
 
 module.exports = { strip: walk }
-
-walk(walkPath, function(error) {
-    if (error) {
-        throw error;
-    } else {
-            console.log(totalFiles)
-    }
-});
