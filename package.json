@@ -14,7 +14,7 @@
     "url": "github.com/CeoFred/log-stripper"
   },
   "keywords": [
-    "logs"
+    "logs","cli"
   ],
   "author": "Alfred Johnson",
   "license": "MIT",
