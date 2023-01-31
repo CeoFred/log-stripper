@@ -16,8 +16,6 @@ const options = yargs
 
 const greeting = `Stripping your javascript files off logs, searching in ${options.d} Directory`;
 
-console.log(options)
-
 const boxenOptions = {
  padding: 1,
  margin: 1,
