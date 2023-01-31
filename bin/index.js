@@ -27,7 +27,7 @@ const msgBox = boxen( greeting, boxenOptions );
 
 logger.info(msgBox);
 
-stripper.strip(options.d,{commentInstead: options.com ? true : false},function(){
+stripper.strip(options.d, options.com ,function(){
   logger.info("Done Clearing log instances");
 })
 
