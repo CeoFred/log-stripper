@@ -3,8 +3,8 @@ var fs = require('fs');
         var totalFiles = 0;
         const directorListing = [];
 
-var walk = function (dir, opt ,done) {
-    const commentInstead = opt.commentInstead
+var walk = function (dir, commentInstead ,done) {
+  
     fs.readdir(dir, function (error, list) {
         if (error) {
             return done(error);
@@ -53,8 +53,6 @@ fs.readFile(srcPath, 'utf8', function (err, data) {
              formatted = fileContents.replace(regex,function(match) {
                     return commentInstead ? `//${match}` : "";
              });
-             console.log(commentInstead);
-        
         
             fs.writeFile (srcPath, formatted,function(err){
                 if(err) console.log('Failed to write')
