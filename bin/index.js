@@ -8,8 +8,8 @@ const logger = require("./logger");
 
 const options = yargs
  .usage("Usage: -d <directory>")
- .option("-d", { alias: "directory", describe: "Directory To Search for javascript/typescript files", type: "string", demandOption: true })
- .option("-com", { alias: "comment", describe: "Comment Instead of removing log", type: "boolean", demandOption: false })
+ .option("d", { alias: "directory", describe: "Directory To Search for javascript/typescript files", type: "string", demandOption: true })
+ .option("com", { alias: "comment", describe: "Comment Instead of removing log", type: "boolean", demandOption: false })
 
  .argv;
 
